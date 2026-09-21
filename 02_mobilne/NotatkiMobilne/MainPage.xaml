@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NotatkiMobilne.MainPage"
+             Title="Moje notatki">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <Label Text="Moje notatki"
+               FontSize="30"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+        <VerticalStackLayout Spacing="10">
+
+            <Entry x:Name="NotatkaEntry"
+                   Placeholder="Nowy element"
+                   HorizontalOptions="FillAndExpand" />
+
+            <Button Text="DODAJ"
+                    Clicked="DodajNotatke_Clicked"
+                    BackgroundColor="#DC143C"
+                    TextColor="White" />
+
+        </VerticalStackLayout>
+
+        <CollectionView ItemsSource="{Binding Notatki}">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding}"
+                           FontSize="18"
+                           Padding="10" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+    </VerticalStackLayout>
+
+</ContentPage>
